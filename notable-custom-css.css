@@ -1,158 +1,159 @@
+/* Getting rid of the insane roman numerals */
 ol li {
-  list-style: decimal;
-}
-
-
-/*---------------------*
- *    Editor styles    *
- *---------------------*/
-
-/* Get rid of the border */
-.mainbar {
-  border-left: 0 !important;
-}
-
-/* Remove the Tab bar */
-.mainbar > .tabbar { display: none; }
-
-
-/*---------------------*
- *   Sidebar styles    *
- *---------------------*/
-
-/* Change the sidebar colour */
-.sidebar * {
-  background-color: #1b1d1f;
-  color: #e4e4e8;
-}
-
-
-
-/* Root Headings (Notes, Notebooks, Tags, etc.) */
-.sidebar .level-0 span.title:not(.small){
-  font-weight: 600;
-  font-size: 17px;
-  color: #e4e4e8;  /* Slight gray */
-}
-
-/* Tags */
-.sidebar .tag span {
-  color: #f2cb30;
-  /* font-weight: bold; */
-}
-
-/* Notes */
-.sidebar .note span {
-  padding-left: 16px;
-}
-
-
-  /* Selected sidebar item */
-.sidebar .list-item.active .content,
-.sidebar .list-item.active .content * {
-  background: white !important;
-  color: black;
-
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-
-  /* Making the tab connect to editor */
-  display: relative;
-  left: 16px;
-  text-align: right;
-  padding-right: 8px;
-}
-
-/* Hover, Un-Selected sidebar item */
-.sidebar .list-item:not(.active) .content:hover,
-.sidebar .list-item:not(.active) .content:hover * {
-  background: #383838 !important;
-}
-
-/* Hover, Selected sidebar item */
-.sidebar .list-item.active .content:hover,
-.sidebar .list-item.active .content:hover * {
-  color: #666 !important;
-}
-
-
-/*---------------------*
- *    Special icons    *
- *---------------------*/
-
-.sidebar .list-tags [data-id="__NOTABLE_NOTES_ALL__"] .title::before,
-.sidebar .list-tags [data-id="__NOTABLE_FAVORITES__"] .title::before,
-.sidebar .list-tags [data-id="__NOTABLE_UNTAGGED__"] .title::before,
-.sidebar .list-tags [data-id="__NOTABLE_ARCHIVE__"] .title::before,
-.sidebar .list-tags [data-id="__NOTABLE_TRASH__"] .title::before {
-  font-family: "Material Icons";
-  vertical-align: middle;
-  color: #e4e4e8;
-}
-
-.sidebar .list-tags [data-id="__NOTABLE_NOTES_ALL__"] .title::before {
-  content: "note ";
-}
-.sidebar .list-tags [data-id="__NOTABLE_FAVORITES__"] .title::before {
-  content: "star ";
-}
-.sidebar .list-tags [data-id="__NOTABLE_UNTAGGED__"] .title::before {
-  content: "tag ";
-}
-.sidebar .list-tags [data-id="__NOTABLE_ARCHIVE__"] .title::before {
-  content: "archive ";
-}
-.sidebar .list-tags [data-id="__NOTABLE_TRASH__"] .title::before {
-  content: "delete ";
-}
-
-/*---------------------*
- *      Scrollbar      *
- *---------------------*/
-
-/* Removes the scrollbar from the sidebar */
-.scrollbars-track.vertical {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
-
-/*---------------------*
- *       Buttons       *
- *---------------------*/
-
-/* Unselected */
-.sidebar .button.primary:not(.active) {
-  background-color: #1b1d1f !important;
-}
-.sidebar .button.primary:not(.active):hover i {
-}
-/* Unselected, hover */
-.sidebar .button.primary:not(.active):hover {
-  background-color: #1b1d1f !important;
-}
-.sidebar .button.primary:not(.active):hover i {
-  background-color: #1b1d1f !important;
-  color: grey;
-}
-/* Selected */
-.sidebar .button.primary.active {
-  background-color: #e4e4e8 !important;
-}
-.sidebar .button.primary.active i {
-  color: black;
-  background-color: #e4e4e8 !important;
-}
-/* Selected, hover */
-.sidebar .button.primary.active:hover {
-}
-.sidebar .button.primary.active:hover i {
-  color: grey;
-  background-color: #e4e4e8 !important;
-}
-
-
-
-/* Sliders */
-.slider-highlight, .slider-handler {
-    background-color: #f2cb30 !important;
-}
+    list-style: decimal;
+  }
+  
+  /*---------------------*
+   *    Editor styles    *
+   *---------------------*/
+  
+  /* Get rid of the border */
+  .mainbar {
+    border-left: 0 !important;
+  }
+  
+  /* Remove the Tab bar */
+  .mainbar > .tabbar { display: none; }
+  
+  
+  /*---------------------*
+   *   Sidebar styles    *
+   *---------------------*/
+  
+  /* Change the sidebar colour */
+  .sidebar * {
+    background-color: #1b1d1f;
+    color: #e4e4e8;
+  }
+  
+  
+  
+  /* Root Headings (Notes, Notebooks, Tags, etc.) */
+  .sidebar .level-0 span.title:not(.small){
+    font-weight: 600;
+    font-size: 17px;
+    color: #e4e4e8;  /* Slight gray */
+  }
+  
+  /* Tags */
+  .sidebar .tag span {
+    color: #f2cb30;
+    /* font-weight: bold; */
+  }
+  
+  /* Notes */
+  .sidebar .note span {
+    padding-left: 16px;
+  }
+  
+  
+    /* Selected sidebar item */
+  .sidebar .list-item.active .content,
+  .sidebar .list-item.active .content * {
+    background: white !important;
+    color: black;
+  
+    border-radius: 16px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  
+    /* Making the tab connect to editor */
+    display: relative;
+    left: 16px;
+    text-align: right;
+    padding-right: 8px;
+  }
+  
+  /* Hover, Un-Selected sidebar item */
+  .sidebar .list-item:not(.active) .content:hover,
+  .sidebar .list-item:not(.active) .content:hover * {
+    background: #383838 !important;
+  }
+  
+  /* Hover, Selected sidebar item */
+  .sidebar .list-item.active .content:hover,
+  .sidebar .list-item.active .content:hover * {
+    color: #666 !important;
+  }
+  
+  
+  /*---------------------*
+   *    Special icons    *
+   *---------------------*/
+  
+  .sidebar .list-tags [data-id="__NOTABLE_NOTES_ALL__"] .title::before,
+  .sidebar .list-tags [data-id="__NOTABLE_FAVORITES__"] .title::before,
+  .sidebar .list-tags [data-id="__NOTABLE_UNTAGGED__"] .title::before,
+  .sidebar .list-tags [data-id="__NOTABLE_ARCHIVE__"] .title::before,
+  .sidebar .list-tags [data-id="__NOTABLE_TRASH__"] .title::before {
+    font-family: "Material Icons";
+    vertical-align: middle;
+    color: #e4e4e8;
+  }
+  
+  .sidebar .list-tags [data-id="__NOTABLE_NOTES_ALL__"] .title::before {
+    content: "note ";
+  }
+  .sidebar .list-tags [data-id="__NOTABLE_FAVORITES__"] .title::before {
+    content: "star ";
+  }
+  .sidebar .list-tags [data-id="__NOTABLE_UNTAGGED__"] .title::before {
+    content: "tag ";
+  }
+  .sidebar .list-tags [data-id="__NOTABLE_ARCHIVE__"] .title::before {
+    content: "archive ";
+  }
+  .sidebar .list-tags [data-id="__NOTABLE_TRASH__"] .title::before {
+    content: "delete ";
+  }
+  
+  /*---------------------*
+   *      Scrollbar      *
+   *---------------------*/
+  
+  /* Removes the scrollbar from the sidebar */
+  .scrollbars-track.vertical {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+  }
+  
+  /*---------------------*
+   *       Buttons       *
+   *---------------------*/
+  
+  /* Unselected */
+  .sidebar .button.primary:not(.active) {
+    background-color: #1b1d1f !important;
+  }
+  .sidebar .button.primary:not(.active):hover i {
+  }
+  /* Unselected, hover */
+  .sidebar .button.primary:not(.active):hover {
+    background-color: #1b1d1f !important;
+  }
+  .sidebar .button.primary:not(.active):hover i {
+    background-color: #1b1d1f !important;
+    color: grey;
+  }
+  /* Selected */
+  .sidebar .button.primary.active {
+    background-color: #e4e4e8 !important;
+  }
+  .sidebar .button.primary.active i {
+    color: black;
+    background-color: #e4e4e8 !important;
+  }
+  /* Selected, hover */
+  .sidebar .button.primary.active:hover {
+  }
+  .sidebar .button.primary.active:hover i {
+    color: grey;
+    background-color: #e4e4e8 !important;
+  }
+  
+  
+  
+  /* Sliders */
+  .slider-highlight, .slider-handler {
+      background-color: #f2cb30 !important;
+  }
