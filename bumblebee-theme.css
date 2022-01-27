@@ -166,8 +166,8 @@ ol li {
  *   Information Tab   *
  *---------------------*/
 
-.sidebar .information-note-headings .list-item.active .content,
-.sidebar .information-note-headings .list-item.active .content * {
+.sidebar.sidebar .information-note-headings .list-item.active .content,
+.sidebar.sidebar .information-note-headings .list-item.active .content * {
 	background: var(--panel-background) !important;
 	color: var(--sidebar-active-text);
 
@@ -177,6 +177,12 @@ ol li {
 	left: 0;
 	text-align: center;
 	padding-right: 8px;
+}
+
+/* Hover */
+.sidebar.sidebar .information-note-headings .list-item.active .content:hover,
+.sidebar.sidebar .information-note-headings .list-item.active .content:hover * {
+	color: var(--sidebar-active-text-hover) !important;
 }
 
 /*---------------------*
@@ -292,4 +298,42 @@ ol li {
 .slider-highlight,
 .slider-handler {
 	background-color: var(--sidebar-slider) !important;
+}
+
+/*---------------------*
+ *    Modern Mode      *
+ *---------------------*/
+
+/* Root Headings (Notes, Notebooks, Tags, etc.) */
+html.no-has-panel .sidebar .level-0 span.title:not(.small) {
+	font-weight: 600;
+	font-size: 17px;
+	color: #e4e4e8; /* Slight gray */
+}
+
+/* Tags */
+html.no-has-panel .sidebar .tag span {
+	color: #f2cb30;
+	/* font-weight: bold; */
+}
+
+/* Selected sidebar item */
+html.no-has-panel .sidebar .list-item.active .content,
+html.no-has-panel .sidebar .list-item.active .content * {
+	background: white !important;
+	color: black;
+
+	border-radius: 16px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+
+	/* Making the tab connect to editor */
+	left: 16px;
+	text-align: right;
+	padding-right: 8px;
+}
+/* Hover, Selected sidebar item */
+html.no-has-panel .sidebar .list-item.active .content:hover,
+html.no-has-panel .sidebar .list-item.active .content:hover * {
+	color: #666 !important;
 }
