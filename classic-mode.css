@@ -1,0 +1,295 @@
+/*---------------------*
+ *  Opinionated Stuff  *
+ *---------------------*/
+/* Feel free to remove these if you prefer */
+
+/* Getting rid of the insane roman numerals */
+ol li {
+	list-style: decimal;
+}
+
+/* Remove the Tab bar */
+.mainbar > .tabbar {
+	display: none;
+}
+
+/*---------------------*
+ *  Colour Variables   *
+ *---------------------*/
+/* Did I manually label every colour just so I didn't have to use the theme system? Yes. Yes I did. */
+
+:root {
+	/* Sidebar colours */
+	--sidebar-background: #1b1d1f;
+	--sidebar-headings: #f2cb30;
+	--sidebar-tag-text: white;
+	--sidebar-note-text: #e4e4e8;
+	--sidebar-all-background-hover: #383838;
+	--sidebar-active-text: #f2cb30;
+	--sidebar-active-text-hover: #fceeb8;
+
+	/* Panel colours */
+	--panel-background: #26282b;
+	--panel-text: #f2cb30;
+	--panel-active-text: black;
+	--panel-hover-background: #383838;
+	--panel-hover-active-background: #666;
+
+	/* Sidebar buttons */
+	--sidebar-button-unselected-background: #1b1d1f;
+	--sidebar-button-unselected-icon-hover: grey;
+	--sidebar-button-selected-background: #e4e4e8;
+	--sidebar-button-selected-icon: black;
+	--sidebar-button-selected-icon-hover: grey;
+
+	/* Panel buttons */
+	--panel-button-unselected-background: #26282b;
+	--panel-button-unselected-background-hover: #26282b;
+	--panel-button-unselected-icon-hover: #fceeb8;
+	--panel-button-selected-background: white;
+	--panel-button-selected-icon: black;
+	--panel-button-selected-icon-hover: grey;
+
+	/* Sliders */
+
+	--sidebar-slider: #f2cb30;
+}
+
+/*---------------------*
+ *    Editor styles    *
+ *---------------------*/
+
+/* Get rid of the border */
+.mainbar {
+	border-left: 0 !important;
+}
+
+/*---------------------*
+ *    Panel Styles     *
+ *---------------------*/
+
+.panel {
+	border-left: 0 !important;
+}
+
+.panel * {
+	background-color: var(--panel-background);
+	color: var(--panel-text);
+}
+
+/* Selected sidebar item */
+.panel .list-item.active .content,
+.panel .list-item.active .content * {
+	background: white !important;
+	color: var(--panel-active-text);
+
+	border-radius: 16px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+
+	/* Making the tab connect to editor */
+	display: relative;
+	left: 16px;
+	text-align: right;
+	padding-right: 8px;
+}
+
+/* Hover, Un-Selected sidebar item */
+.panel .list-item:not(.active) .content:hover,
+.panel .list-item:not(.active) .content:hover * {
+	background: var(--panel-hover-background) !important;
+}
+
+/* Hover, Selected sidebar item */
+.panel .list-item.active .content:hover,
+.panel .list-item.active .content:hover * {
+	color: var(--panel-hover-active-background) !important;
+}
+
+/*---------------------*
+ *   Sidebar styles    *
+ *---------------------*/
+
+/* Change the sidebar colour */
+.sidebar * {
+	background-color: var(--sidebar-background);
+	color: var(--sidebar-note-text);
+}
+
+/* Root Headings (Notes, Notebooks, Tags, etc.) */
+.sidebar .level-0 span.title:not(.small) {
+	font-weight: 600;
+	font-size: 17px;
+	color: var(--sidebar-headings); /* Slight gray */
+}
+
+/* Tags */
+.sidebar .tag span {
+	color: var(--sidebar-tag-text);
+	/* font-weight: bold; */
+}
+
+/* Notes */
+.sidebar .note span {
+	padding-left: 16px;
+}
+
+/* Selected sidebar item */
+.sidebar .list-item.active .content,
+.sidebar .list-item.active .content * {
+	background: var(--panel-background) !important;
+	color: var(--sidebar-active-text);
+
+	border-radius: 16px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+
+	/* Making the tab connect to editor */
+	left: 16px;
+	text-align: right;
+	padding-right: 8px;
+}
+
+/* Hover, Un-Selected sidebar item */
+.sidebar .list-item:not(.active) .content:hover,
+.sidebar .list-item:not(.active) .content:hover * {
+	background: var(--sidebar-all-background-hover) !important;
+}
+
+/* Hover, Selected sidebar item */
+.sidebar .list-item.active .content:hover,
+.sidebar .list-item.active .content:hover * {
+	color: var(--sidebar-active-text-hover) !important;
+}
+
+/*---------------------*
+ *   Information Tab   *
+ *---------------------*/
+
+.sidebar .information-note-headings .list-item.active .content,
+.sidebar .information-note-headings .list-item.active .content * {
+	background: var(--panel-background) !important;
+	color: var(--sidebar-active-text);
+
+	border-radius: 0.375em;
+
+	/* Making the tab connect to editor */
+	left: 0;
+	text-align: center;
+	padding-right: 8px;
+}
+
+/*---------------------*
+ *    Special icons    *
+ *---------------------*/
+
+.sidebar .list-tags [data-id="__NOTABLE_NOTES_ALL__"] .title::before,
+.sidebar .list-tags [data-id="__NOTABLE_FAVORITES__"] .title::before,
+.sidebar .list-tags [data-id="__NOTABLE_UNTAGGED__"] .title::before,
+.sidebar .list-tags [data-id="__NOTABLE_ARCHIVE__"] .title::before,
+.sidebar .list-tags [data-id="__NOTABLE_TRASH__"] .title::before {
+	font-family: "Material Icons";
+	vertical-align: middle;
+	color: var(--sidebar-tag-text);
+}
+
+.sidebar .list-tags [data-id="__NOTABLE_NOTES_ALL__"] .title::before {
+	content: "note ";
+}
+.sidebar .list-tags [data-id="__NOTABLE_FAVORITES__"] .title::before {
+	content: "star ";
+}
+.sidebar .list-tags [data-id="__NOTABLE_UNTAGGED__"] .title::before {
+	content: "tag ";
+}
+.sidebar .list-tags [data-id="__NOTABLE_ARCHIVE__"] .title::before {
+	content: "archive ";
+}
+.sidebar .list-tags [data-id="__NOTABLE_TRASH__"] .title::before {
+	content: "delete ";
+}
+
+/*---------------------*
+ *      Scrollbar      *
+ *---------------------*/
+
+/* Removes the scrollbar from the sidebar */
+.scrollbars-track.vertical {
+	width: 0px;
+	background: transparent; /* make scrollbar transparent */
+}
+
+/*---------------------*
+ *       Buttons       *
+ *---------------------*/
+
+/* Unselected */
+.sidebar .button.primary:not(.active) {
+	background-color: var(--sidebar-button-unselected-background) !important;
+}
+.sidebar .button.primary:not(.active):hover i {
+}
+/* Unselected, hover */
+.sidebar .button.primary:not(.active):hover {
+	background-color: var(--sidebar-button-unselected-background) !important;
+}
+.sidebar .button.primary:not(.active):hover i {
+	background-color: var(--sidebar-button-unselected-background) !important;
+	color: var(--sidebar-button-unselected-icon-hover);
+}
+/* Selected */
+.sidebar .button.primary.active {
+	background-color: var(--sidebar-button-selected-background) !important;
+}
+.sidebar .button.primary.active i {
+	color: var(--sidebar-button-selected-icon);
+	background-color: var(--sidebar-button-selected-background) !important;
+}
+/* Selected, hover */
+.sidebar .button.primary.active:hover {
+}
+.sidebar .button.primary.active:hover i {
+	color: var(--sidebar-button-selected-icon-hover);
+	background-color: var(--sidebar-button-selected-background) !important;
+}
+
+/*---------------------*
+ *    Panel Buttons    *
+ *---------------------*/
+
+/* Unselected */
+.panel .button.primary:not(.active) {
+	background-color: var(--panel-button-unselected-background) !important;
+}
+.panel .button.primary:not(.active) i {
+	background-color: var(--panel-button-unselected-background);
+}
+/* Unselected, hover */
+.panel .button.primary:not(.active):hover {
+	background-color: var(--panel-button-unselected-background-hover) !important;
+}
+.panel .button.primary:not(.active):hover i {
+	background-color: var(--panel-button-unselected-background-hover) !important;
+	color: var(--panel-button-unselected-icon-hover);
+}
+/* Selected */
+.panel .button.primary.active {
+	background-color: var(--panel-button-selected-background) !important;
+}
+.panel .button.primary.active i {
+	color: var(--panel-button-selected-icon);
+	background-color: var(--panel-button-selected-background) !important;
+}
+/* Selected, hover */
+.panel .button.primary.active:hover {
+}
+.panel .button.primary.active:hover i {
+	color: var(--panel-button-selected-icon-hover);
+	background-color: var(--panel-button-selected-background) !important;
+}
+
+/* Sliders */
+.slider-highlight,
+.slider-handler {
+	background-color: var(--sidebar-slider) !important;
+}
