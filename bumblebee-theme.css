@@ -64,12 +64,19 @@ ol li {
 	border-left: 0 !important;
 }
 
+/* .mainbar .statusbar,
+.mainbar .statusbar * {
+    background-color: var(--sidebar-background) !important;
+    color: var(--panel-text);
+} */
+
 /*---------------------*
  *    Panel Styles     *
  *---------------------*/
 
 .panel {
 	border-left: 0 !important;
+	background-color: var(--panel-background) !important;
 }
 
 .panel * {
@@ -94,13 +101,13 @@ ol li {
 	padding-right: 8px;
 }
 
-/* Hover, Un-Selected sidebar item */
+/* Hover, Un-Selected panel item */
 .panel .list-item:not(.active) .content:hover,
 .panel .list-item:not(.active) .content:hover * {
 	background: var(--panel-hover-background) !important;
 }
 
-/* Hover, Selected sidebar item */
+/* Hover, Selected panel item */
 .panel .list-item.active .content:hover,
 .panel .list-item.active .content:hover * {
 	color: var(--panel-hover-active-background) !important;
@@ -151,8 +158,8 @@ ol li {
 }
 
 /* Hover, Un-Selected sidebar item */
-.sidebar .list-item:not(.active) .content:hover,
-.sidebar .list-item:not(.active) .content:hover * {
+.sidebar.sidebar .list-item:not(.active):hover .content,
+.sidebar.sidebar .list-item:not(.active):hover .content * {
 	background: var(--sidebar-all-background-hover) !important;
 }
 
@@ -220,13 +227,18 @@ ol li {
  *---------------------*/
 
 /* Removes the scrollbar from the sidebar */
-.scrollbars-track.vertical {
+.sidebar .scrollbars-track.vertical {
+	width: 0px;
+	background: transparent; /* make scrollbar transparent */
+}
+
+.panel .scrollbars-track.vertical {
 	width: 0px;
 	background: transparent; /* make scrollbar transparent */
 }
 
 /*---------------------*
- *       Buttons       *
+ *   Sidebar Buttons   *
  *---------------------*/
 
 /* Unselected */
@@ -234,6 +246,7 @@ ol li {
 	background-color: var(--sidebar-button-unselected-background) !important;
 }
 .sidebar .button.primary:not(.active):hover i {
+	/* color: var(); */
 }
 /* Unselected, hover */
 .sidebar .button.primary:not(.active):hover {
@@ -298,6 +311,12 @@ ol li {
 .slider-highlight,
 .slider-handler {
 	background-color: var(--sidebar-slider) !important;
+}
+
+/* New Note Button */
+.new-note-button {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
 
 /*---------------------*
